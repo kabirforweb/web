@@ -1,8 +1,8 @@
 @extends('guest.master')
 
-</head>
+@include('guest.head')
 
-<body id="page-top" class="index">
+    <body id="page-top" class="index">
 
 <!-- Navigation1 -->
 <nav id="" class="navbar navbar-default navbar-fixed-top navbar-custom white-custom-nav">
