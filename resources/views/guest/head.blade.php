@@ -7,5 +7,5 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Fantasy</title>
+    <title>@yield('title','Line up Beast')</title>
 </head>

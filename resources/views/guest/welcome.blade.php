@@ -22,10 +22,10 @@
 
 
                 <li class="page-scroll">
-                    <a href="login.html">Login</a>
+                    <a href="{{route('login')}}">Login</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="login.html">Signup</a>
+                    <a href="{{route('home')}}">Signup</a>
                 </li>
             </ul>
         </div>
@@ -601,65 +601,9 @@
     </div>
 </div>
 
-@section('styles')
+@include('guest.styles')
+@include('guest.scripts')
 
-<link href="{{asset('css/animate.css')}}" rel="stylesheet" type="text/css" media="all">
-<!-- Bootstrap Core CSS -->
-<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-<!-- Theme CSS -->
-<link href="{{asset('css/freelancer.min.css')}}" rel="stylesheet">
-
-<!-- Custom Fonts -->
-<link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-@endsection
-
-@section('scripts')
-    <!-- jQuery -->
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="{{asset('js/jqBootstrapValidation.js')}}"></script>
-    <script src="{{asset('js/contact_me.js')}}"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="{{asset('js/freelancer.min.js')}}"></script>
-
-    <script src="{{asset('js/wow.min.js')}}"></script>
-
-    <script>
-        new WOW().init();
-    </script>
-    <!---- animated-css ---->
-    <!---- start-smoth-scrolling---->
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event){
-                event.preventDefault();
-                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-            });
-        });
-    </script>
-
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-
-@endsection
 </body>
 
 </html>

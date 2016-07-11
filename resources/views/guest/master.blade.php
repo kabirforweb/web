@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>App Name - @yield('title')</title>
+    @include('guest.head')
 </head>
 <body>
 

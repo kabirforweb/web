@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as'=>'home','uses'=>'HomeController@landing']);
+Route::get('login',['as'=>'login','uses'=>'HomeController@login']);
