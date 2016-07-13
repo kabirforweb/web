@@ -29,6 +29,16 @@
             event.preventDefault();
             $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
         });
+
+        var action = "{{session()->get('action')}}";
+
+        if(action == 'register'){
+            $('#loginbox').hide();
+            $('#signupbox').show()
+        }else{
+            $('#loginbox').show();
+            $('#signupbox').hide()
+        }
     });
 </script>
 

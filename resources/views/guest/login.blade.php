@@ -18,23 +18,32 @@
                     <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
                 </div>
 
+                @if (session()->get('action') == 'login' && Session::has('flash_notification.message'))
+                    <div class="alert alert-{{ Session::get('flash_notification.level') }} text-center">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ Session::get('flash_notification.message') }}
+                    </div>
+                @endif
+
                 <div style="padding-top:30px" class="panel-body" >
 
                     <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-                    <form id="loginform" class="form-horizontal" role="form">
+                    <form id="loginform" class="form-horizontal" role="form" action="{{route('authenticate')}}" method="post">
+
+                        {{csrf_field()}}
+
+                        <input type="hidden" name="action" value="register">
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
+                            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Enter your Email">
                         </div>
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                            <input id="login-password" type="password" class="form-control" name="password" placeholder="Enter your password">
                         </div>
-
-
 
                         <div class="input-group">
                             <div class="checkbox">
@@ -44,17 +53,14 @@
                             </div>
                         </div>
 
-
                         <div style="margin-top:10px" class="form-group">
                             <!-- Button -->
 
                             <div class="col-sm-12 controls">
-                                <a id="btn-login" href="#" class="btn btn-color">Login  </a>
-                                <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
-
+                                <button type="submit" id="btn-login" class="btn btn-color">Login  </button>
+                                <a id="btn-fblogin" href="{{url('redirect')}}" class="btn btn-primary">Login with Facebook</a>
                             </div>
                         </div>
-
 
                         <div class="form-group">
                             <div class="col-md-12 control">
@@ -67,9 +73,6 @@
                             </div>
                         </div>
                     </form>
-
-
-
                 </div>
             </div>
         </div>
@@ -84,48 +87,54 @@
                     <div class="panel-title">Sign Up</div>
                     <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
                 </div>
+
+                @if (session()->get('action') == 'register' && Session::has('flash_notification.message'))
+                    <div class="alert alert-{{ Session::get('flash_notification.level') }} text-center">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ Session::get('flash_notification.message') }}
+                    </div>
+                @endif
+
                 <div class="panel-body" >
-                    <form id="signupform" class="form-horizontal" role="form">
+                    <form id="signupform" class="form-horizontal" role="form" method="post" action="{{route('register')}}">
+
+                        {{csrf_field()}}
 
                         <div id="signupalert" style="display:none" class="alert alert-danger">
                             <p>Error:</p>
                             <span></span>
                         </div>
-
-
-
+                        <input type="hidden" name="action" value="register">
                         <div class="form-group">
                             <label for="email" class="col-md-3 control-label">Email</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="email" placeholder="Email Address">
+                                <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="firstname" class="col-md-3 control-label">First Name</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                                <input type="text" class="form-control" name="firstname" placeholder="First Name" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-md-3 control-label">Last Name</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-md-3 control-label">Password</label>
                             <div class="col-md-9">
-                                <input type="password" class="form-control" name="passwd" placeholder="Password">
+                                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
                             </div>
                         </div>
-
-
 
                         <div class="form-group">
                             <!-- Button -->
                             <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-signup" type="button" class="btn btn-color btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                <button id="btn-signup" type="submit" class="btn btn-color btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
                                 <span style="margin-left:8px;">or</span>
                             </div>
                         </div>
@@ -133,19 +142,14 @@
                         <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
 
                             <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                                <a id="btn-fbsignup"  class="btn btn-primary" href="{{url('redirect')}}" ><i class="icon-facebook"></i>   Sign Up with Facebook</a>
                             </div>
 
                         </div>
 
-
-
                     </form>
                 </div>
             </div>
-
-
-
 
         </div>
     </div>

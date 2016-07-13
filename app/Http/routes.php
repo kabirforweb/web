@@ -12,4 +12,20 @@
 */
 
 Route::get('/', ['as'=>'home','uses'=>'HomeController@landing']);
-Route::get('login',['as'=>'login','uses'=>'HomeController@login']);
+
+Route::group(['middleware'=>['guest']],function(){
+    Route::get('login',['as'=>'login','uses'=>'HomeController@login']);
+    Route::post('login',['as'=>'authenticate','uses'=>'HomeController@authenticate']);
+    Route::post('register',['as'=>'register','uses'=>'HomeController@register']);
+    //Facebook
+    Route::get('redirect', 'SocialAuthController@redirect');
+    Route::get('callback', 'SocialAuthController@callback');
+
+});
+
+Route::group(['middleware' => ['auth']],function(){
+    Route::get('index',['as'=>'dashboard','uses'=>'HomeController@index']);
+    Route::get('logout',['as'=>'logout','uses'=>'HomeController@logout']);
+});
+
+
