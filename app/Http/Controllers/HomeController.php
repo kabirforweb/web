@@ -94,7 +94,7 @@ class HomeController extends LineupBeastController
                 return redirect()->back()->withInput($request->all())->with('action','login');
             }
         }
-
+        Session::set('user', $body->user);
         Session::set('user_id', $body->user->id);
         Session::set('access_token',  $body->token);
         return redirect()->action('HomeController@index');
@@ -105,8 +105,8 @@ class HomeController extends LineupBeastController
         Session::forget('user_id');
         Session::forget('access_token');
 
-        Flash::info('Logged out successfully');
-        return redirect()->route('login');
+        Flash::success('Logged out successfully');
+        return redirect()->route('login')->with('action','login');;
     }
 
     public function forgotPassword(Request $request){
@@ -183,7 +183,9 @@ class HomeController extends LineupBeastController
     }
 
     public function index(){
-        return Session::all();
+
+        $user   =   Session::get('user')->firstname;
+        return view('protected.dashboard')->with(compact('user'));
     }
 
 }

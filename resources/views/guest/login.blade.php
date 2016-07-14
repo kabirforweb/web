@@ -37,7 +37,7 @@
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Enter your Email">
+                            <input id="login-username" type="text" class="form-control" name="username" value="{{old('email')}}" placeholder="Enter your Email">
                         </div>
 
                         <div style="margin-bottom: 25px" class="input-group">
@@ -105,20 +105,20 @@
                         <div class="form-group">
                             <label for="email" class="col-md-3 control-label">Email</label>
                             <div class="col-md-9">
-                                <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
+                                <input type="email" class="form-control" name="email" placeholder="Email Address" required="required" value="{{old('email')}}">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="firstname" class="col-md-3 control-label">First Name</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="firstname" placeholder="First Name" required="required">
+                                <input type="text" class="form-control" name="firstname" placeholder="First Name" required="required" value="{{old('firstname')}}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-md-3 control-label">Last Name</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="required">
+                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="required" value="{{old('lastname')}}">
                             </div>
                         </div>
                         <div class="form-group">
