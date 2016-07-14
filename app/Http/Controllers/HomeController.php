@@ -147,7 +147,7 @@ class HomeController extends LineupBeastController
             if($e instanceof ServerException || $e instanceof ClientException){
                 $body = json_decode($e->getResponse()->getBody(true));
 
-                Flash::error($body);
+                Flash::error($body->error);
                 return redirect()->back()->withInput($request->all())->with('action','forgot_password');
             }
         }
