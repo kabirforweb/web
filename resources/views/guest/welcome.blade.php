@@ -25,7 +25,7 @@
                     <a href="{{route('login')}}">Login</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="{{route('home')}}">Signup</a>
+                    <a href="{{route('signup')}}">Signup</a>
                 </li>
             </ul>
         </div>

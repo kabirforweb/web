@@ -18,6 +18,23 @@ class HomeController extends LineupBeastController
         return view('guest.welcome');
     }
 
+    public function signUp(Request $request){
+
+        $_previous = (Session::get('_previous'));
+
+        if(!preg_match('/login$/',$_previous['url'])){
+            Session::set('redirectTo',$_previous['url']);
+        }
+
+        if($request->has('msg')){
+            Flash::error($request->get('msg'));
+            return Redirect::to('login')->withInput()->with('action','register');
+        }
+
+        Session::put('action','register');
+        return view('guest.login');
+    }
+
     public function register(Request $request){
 
         if( null === $request->email        ||

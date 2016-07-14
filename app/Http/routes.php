@@ -17,6 +17,7 @@ Route::get('home', ['as'=>'home','uses'=>'HomeController@landing']);
 Route::group(['middleware'=>['guest']],function(){
     Route::get('login',['as'=>'login','uses'=>'HomeController@login']);
     Route::post('login',['as'=>'authenticate','uses'=>'HomeController@authenticate']);
+    Route::get('signup',['as'=>'signup','uses'=>'HomeController@signup']);
     Route::post('register',['as'=>'register','uses'=>'HomeController@register']);
     Route::post('forgot-password',['as'=>'forgot_password','uses'=>'HomeController@forgotPassword']);
     Route::get('password/reset/{token}',['as'=>'confirm_password','uses'=>'HomeController@confirmPasswordReset']);
