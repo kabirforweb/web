@@ -33,11 +33,21 @@
         var action = "{{session()->get('action')}}";
 
         if(action == 'register'){
-            $('#loginbox').hide();
             $('#signupbox').show()
-        }else{
+            $('#loginbox').hide();
+            $('#forgot_password').hide();
+        }else if(action == 'login'){
             $('#loginbox').show();
-            $('#signupbox').hide()
+            $('#signupbox').hide();
+            $('#forgot_password').hide();
+        }else if(action == 'forgot_password'){
+            $('#loginbox').hide();
+            $('#signupbox').hide();
+            $('#forgot_password').show();
+        }else{
+            $('#loginbox').show()
+            $('#signupbox').hide();
+            $('#forgot_password').hide();
         }
     });
 </script>

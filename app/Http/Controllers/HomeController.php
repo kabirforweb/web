@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
 use Laracasts\Flash\Flash;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends LineupBeastController
 {
@@ -67,8 +68,8 @@ class HomeController extends LineupBeastController
             Flash::error($request->get('msg'));
             return Redirect::to('login')->withInput()->with('action','login');
         }
-        return view('guest.login');
 
+        return view('guest.login');
     }
 
     public function authenticate(Request $request){
@@ -106,6 +107,79 @@ class HomeController extends LineupBeastController
 
         Flash::info('Logged out successfully');
         return redirect()->route('login');
+    }
+
+    public function forgotPassword(Request $request){
+
+        if( !$request->has('email') || empty($request->get('email')) ){
+            Flash::error('Please enter your email');
+            return redirect()->back()->withInput($request->all())->with('action','forgot_password');
+        }
+
+        try {
+
+            $response = $this->client->request( 'POST', $this->api_server_url.'user/forgot-password', [
+                'form_params' => [
+                    'email'         => $request->get('email')
+                ]
+            ]);
+
+            $body = json_decode($response->getBody());
+
+        } catch (\Exception $e) {
+            if($e instanceof ServerException || $e instanceof ClientException){
+                $body = json_decode($e->getResponse()->getBody(true));
+
+                Flash::error($body);
+                return redirect()->back()->withInput($request->all())->with('action','forgot_password');
+            }
+        }
+
+        Flash::success('A password reset email has been sent successfully');
+        return redirect()->back()->with('action','forgot_password');
+
+    }
+
+    public function confirmPasswordReset($token){
+
+        try {
+            $response = $this->client->request( 'GET', $this->api_server_url.'user/verify-forgot-password-token/'.$token);
+        } catch (\Exception $e) {
+            if($e instanceof ServerException || $e instanceof ClientException){
+                Flash::error('This URL is no longer valid');
+                return view('guest.bad_token')->with('action','forgot_password');
+            }
+        }
+
+        $response   =   json_decode($response->getBody());
+        Session::put('user_id',$response->user_id);
+        return view('guest.confirm_password')->with('user_id',$response->user_id);
+    }
+
+    public function resetPassword(Request $request){
+
+        try {
+
+            $response = $this->client->request( 'POST', $this->api_server_url.'user/confirm-password', [
+                'form_params' => [
+                    'user_id'                   => Session::get('user_id'),
+                    'password'                  => $request->get('password'),
+                    'confirm_password'          => $request->get('confirm_password'),
+                ]
+            ]);
+
+            $body = json_decode($response->getBody());
+
+        } catch (\Exception $e) {
+            if($e instanceof ServerException || $e instanceof ClientException){
+                $body = json_decode($e->getResponse()->getBody(true));
+                Flash::error($body->error);
+                return redirect()->back()->withInput($request->all());
+            }
+        }
+
+        Flash::success('Your password has been reset successfully!');
+        return redirect()->route('login')->with('action','login');
     }
 
     public function index(){
