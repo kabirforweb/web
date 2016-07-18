@@ -61,6 +61,10 @@
                     <a href="#service">Services</a>
                 </li>
 
+                <li class="">
+                    <a href="{{route('plans')}}">Plans</a>
+                </li>
+
                 <li class="page-scroll">
                     <a href="#feature">Feature</a>
                 </li>

@@ -13,6 +13,7 @@
 
 Route::get('/', ['as'=>'home','uses'=>'HomeController@landing']);
 Route::get('home', ['as'=>'home','uses'=>'HomeController@landing']);
+Route::get('plans', ['as'=>'plans','uses'=>'PlansController@index']);
 
 Route::group(['middleware'=>['guest']],function(){
     Route::get('login',['as'=>'login','uses'=>'HomeController@login']);

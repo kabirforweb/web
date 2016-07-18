@@ -128,7 +128,7 @@ class HomeController extends LineupBeastController
 
     public function forgotPassword(Request $request){
 
-        if( !$request->has('email') || empty($request->get('email')) ){
+        if( !$request->has('email') || empty($request->get('email') ) ){
             Flash::error('Please enter your email');
             return redirect()->back()->withInput($request->all())->with('action','forgot_password');
         }
