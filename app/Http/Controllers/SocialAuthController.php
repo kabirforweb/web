@@ -52,6 +52,7 @@ class SocialAuthController extends LineupBeastController
             }
         }
 
+        Session::set('user', $body->user);
         Session::set('user_id', $body->user->id);
         Session::set('access_token',  $body->token);
         return redirect()->action('HomeController@index');
