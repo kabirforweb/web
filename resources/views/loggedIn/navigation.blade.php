@@ -19,7 +19,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
-                <li class="page-scroll">Welcome {{$user}}!</li>
+                <li class="page-scroll"><a href="" class="no_click"> Welcome <span class="user_name"><strong>{{$user}}!</strong></span></a></li>
                 <li class="page-scroll"> <a href="#">Blog</a> </li>
                 <li class="page-scroll"> <a href="#">About </a> </li>
                 <li class="page-scroll"> <a href="{{route('logout')}}">Log Out</a> </li>

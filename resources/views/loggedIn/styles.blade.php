@@ -13,3 +13,4 @@
 <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}"/>
 <link rel="stylesheet" href="{{asset('css/owl.theme.css')}}"/>
 <link rel="stylesheet" href="{{asset('css/new.css')}}"/>
+<link rel="stylesheet" href="{{asset('css/custom.css')}}"/>
