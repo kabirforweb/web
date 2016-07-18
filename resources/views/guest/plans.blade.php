@@ -1,12 +1,6 @@
+@extends('guest.master')
 @include('guest.head')
 
-<!doctype html>
-<html lang="en" class="no-js">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Animated Sign Up Flow | CodyHouse</title>
-</head>
 <body>
 
 <header class="cd-main-header">
@@ -42,8 +36,6 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-
-
 
 <!-- Navigation2 -->
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom red-custom-nav">
@@ -90,7 +82,6 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-
 
 <ul class="cd-pricing">
     <li>
@@ -278,17 +269,20 @@
 </div> <!-- .cd-form -->
 <!-- Footer -->
 
+@include('guest.footer')
+
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" href="{{asset('css/reset.css')}}"> <!-- CSS reset -->
 <link rel="stylesheet" href="{{asset('css/style.css')}}"> <!-- Resource style -->
-<script src="{{asset('js/modernizr.js')}}"></script> <!-- Modernizr -->
+<script src="{{asset('js/modernizr.js')}}"></script> <!-- Modernizer -->
 
 <div class="cd-overlay"></div> <!-- shadow layer -->
 <script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/velocity.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script> <!-- Resource jQuery -->
-@include('guest.footer')
+<link rel="stylesheet" href="{{asset('css/custom.css')}}"> <!-- CSS reset -->
+
 @include('guest.styles')
 </body>
 </html>
