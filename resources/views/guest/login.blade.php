@@ -10,7 +10,7 @@
         <div id="loginbox" style="margin-top:0px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
             <div class="text-center logo-top-img">
-                <a href="{{route('home')}}"><img src="{{asset('images/logo-trans.png')}}" width="90" height="90"></a></div>
+                <a href="{{route('home')}}"><img src="{{asset('img/logo-trans.png')}}" width="90" height="90"></a></div>
 
             <div class="panel panel-info login-bg" >
                 <div class="panel-heading">
@@ -77,7 +77,7 @@
         <div id="signupbox" style="display:none; margin-top:0px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
             <div class="text-center logo-top-img">
-                <a href="index.html"><img src="{{asset('images/logo-trans.png')}}" width="90" height="90"></a></div>
+                <a href="index.html"><img src="{{asset('img/logo-trans.png')}}" width="90" height="90"></a></div>
 
             <div class="panel panel-info signup-bg">
                 <div class="panel-heading">
@@ -150,7 +150,7 @@
         <div id="forgot_password" style="display:none; margin-top:0px"  class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
             <div class="text-center logo-top-img">
-                <a href="{{route('home')}}"><img src="{{asset('images/logo-trans.png')}}" width="90" height="90"></a></div>
+                <a href="{{route('home')}}"><img src="{{asset('img/logo-trans.png')}}" width="90" height="90"></a></div>
 
             <div class="panel panel-info login-bg" >
                 <div class="panel-heading">

@@ -202,7 +202,7 @@ class HomeController extends LineupBeastController
     public function index(){
 
         $user   =   Session::get('user')->firstname;
-        return view('loggedIn.dashboard')->with(compact('user'));
+        return view('test.dashboard')->with(compact('user'));
     }
 
 }

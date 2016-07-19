@@ -1,13 +1,14 @@
 <html>
 <head>
     @include('guest.head')
+    @yield('styles')
 </head>
 <body>
 
     <div class="container">
         @yield('content')
     </div>
-    @yield('styles')
+
     @yield('scripts')
 
 </body>

@@ -44,7 +44,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="#page-top"><img src="{{asset('images/logo.png')}}" width="90" height="90"></a>
+            <a class="navbar-brand" href="#page-top"><img src="{{asset('img/logo.png')}}" width="90" height="90"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -61,9 +61,9 @@
                     <a href="#service">Services</a>
                 </li>
 
-                <li class="">
-                    <a href="{{route('plans')}}">Plans</a>
-                </li>
+<!--                <li class="">-->
+<!--                    <a href="{{route('plans')}}">Plans</a>-->
+<!--                </li>-->
 
                 <li class="page-scroll">
                     <a href="#feature">Feature</a>
@@ -393,7 +393,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="{{asset('images/portfolio/cabin.png')}}" class="img-responsive img-centered" alt="">
+                        <img src="{{asset('img/portfolio/cabin.png')}}" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -430,7 +430,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="{{asset('images/portfolio/cake.png')}}" class="img-responsive img-centered" alt="">
+                        <img src="{{asset('img/portfolio/cake.png')}}" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -467,7 +467,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="{{asset('images/portfolio/circus.png')}}" class="img-responsive img-centered" alt="">
+                        <img src="{{asset('img/portfolio/circus.png')}}" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -504,7 +504,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="{{asset('images/portfolio/game.png')}}" class="img-responsive img-centered" alt="">
+                        <img src="{{asset('img/portfolio/game.png')}}" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -541,7 +541,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="{{asset('images/portfolio/safe.png')}}" class="img-responsive img-centered" alt="">
+                        <img src="{{asset('img/portfolio/safe.png')}}" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -578,7 +578,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="{{asset('images/portfolio/submarine.png')}}" class="img-responsive img-centered" alt="">
+                        <img src="{{asset('img/portfolio/submarine.png')}}" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project.
                             The icon above is part of a free icon set by
                             <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download
