@@ -180,12 +180,12 @@
 
                 <div class="half-width">
                     <label for="userPassword">Password</label>
-                    <input type="password" id="password" name="password" required="required">
+                    <input type="password" id="pword" name="password" required="required">
                 </div>
 
                 <div class="half-width">
                     <label for="userPasswordRepeat">Repeat Password</label>
-                    <input type="password" id="confirm_password" name="confirm_password" required="required">
+                    <input type="password" id="cpword" name="confirm_password" required="required">
                 </div>
             </fieldset>
 
@@ -254,7 +254,7 @@
 
             <fieldset>
                 <div>
-                    <input class="btn btn-lg btn-color" type="submit" value="Get started">
+                    <input class="btn btn-lg btn-color" type="submit" value="Get started" id="signup_submit">
                 </div>
             </fieldset>
         </form>
@@ -577,6 +577,19 @@
 <script src="js/velocity.min.js"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
 
+<script>
+    $(document).ready(function(){
+        $('#signup_submit').click(function(e){
+            e.preventDefault();
+            if( $('#pword').val() != $('#cpword').val()){
+                alert('Both password and confirm password should be same');
+                return false;
+            }
+            $(this).parents('form').submit();
+        });
+    });
+
+</script>
 </body>
 
 </html>
