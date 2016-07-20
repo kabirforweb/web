@@ -580,9 +580,8 @@
 <script>
     $(document).ready(function(){
         $('#signup_submit').click(function(e){
-
             e.preventDefault();
-            console.log(validateEmail($('#email').val());
+
             if($('#firstname').val() == '' ||
                 $('#lastname').val() == '' ||
                 $('#email').val()    == '' ||
@@ -594,6 +593,11 @@
                 return false;
             }
 
+            if(!validateEmail($('#email').val())){
+                alert('Invalid email provided');
+                $('#email').focus();
+                return false;
+            }
 
             if( $('#pword').val() != $('#cpword').val()){
                 alert('Both password and confirm password should be same');
