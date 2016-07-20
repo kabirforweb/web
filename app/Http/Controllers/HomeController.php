@@ -36,11 +36,11 @@ class HomeController extends LineupBeastController
 
     public function register(Request $request){
 
-        if( null === $request->email        ||
-            null === $request->firstname    ||
-            null === $request->lastname     ||
-            null === $request->password     ||
-            null === $request->confirm_password
+        if( null == $request->email        ||
+            null == $request->firstname    ||
+            null == $request->lastname     ||
+            null == $request->password     ||
+            null == $request->confirm_password
 
         ){
             Flash::error('One of the required field is empty');
