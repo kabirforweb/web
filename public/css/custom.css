@@ -4,3 +4,9 @@
 .no_click{
     cursor: default;
 }
+.signup_error
+{
+    width: 70%;
+    text-align: center;
+    margin-left: 15%;
+}

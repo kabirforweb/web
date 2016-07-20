@@ -32,15 +32,7 @@
 
         var action = "{{session()->get('action')}}";
 
-        if(action == 'register'){
-            $('#signupbox').show()
-            $('#loginbox').hide();
-            $('#forgot_password').hide();
-        }else if(action == 'login'){
-            $('#loginbox').show();
-            $('#signupbox').hide();
-            $('#forgot_password').hide();
-        }else if(action == 'forgot_password'){
+        if(action == 'forgot_password'){
             $('#loginbox').hide();
             $('#signupbox').hide();
             $('#forgot_password').show();

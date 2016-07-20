@@ -31,8 +31,7 @@ class HomeController extends LineupBeastController
             return Redirect::to('login')->withInput()->with('action','register');
         }
 
-        Session::put('action','register');
-        return view('guest.login');
+        return view('guest.signup');
     }
 
     public function register(Request $request){
@@ -40,9 +39,16 @@ class HomeController extends LineupBeastController
         if( null === $request->email        ||
             null === $request->firstname    ||
             null === $request->lastname     ||
-            null === $request->password
+            null === $request->password     ||
+            null === $request->confirm_password
+
         ){
             Flash::error('One of the required field is empty');
+            return redirect()->back()->withInput($request->all())->with('action','register');
+        }
+
+        if($request->password != $request->confirm_password){
+            Flash::error('Password and confirm password does not match.');
             return redirect()->back()->withInput($request->all())->with('action','register');
         }
 
