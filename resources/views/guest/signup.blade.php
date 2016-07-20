@@ -580,13 +580,32 @@
 <script>
     $(document).ready(function(){
         $('#signup_submit').click(function(e){
+
             e.preventDefault();
+            console.log(validateEmail($('#email').val());
+            if($('#firstname').val() == '' ||
+                $('#lastname').val() == '' ||
+                $('#email').val()    == '' ||
+                $('#pword').val() == '' ||
+                $('#cpword').val() == ''
+             ){
+                alert('Please make sure to fill all the fields');
+                $('#firstname').focus();
+                return false;
+            }
+
+
             if( $('#pword').val() != $('#cpword').val()){
                 alert('Both password and confirm password should be same');
                 return false;
             }
             $(this).parents('form').submit();
         });
+
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
     });
 
 </script>
