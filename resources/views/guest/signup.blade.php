@@ -165,27 +165,27 @@
 
                 <div class="half-width">
                     <label for="userName">First Name</label>
-                    <input type="text" id="firstname" name="firstname">
+                    <input type="text" id="firstname" name="firstname" required="required">
                 </div>
 
                 <div class="half-width">
                     <label for="userName">last Name</label>
-                    <input type="text" id="lastname" name="lastname">
+                    <input type="text" id="lastname" name="lastname" required="required">
                 </div>
 
                 <div class="half-width">
                     <label for="userEmail">Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" required="required">
                 </div>
 
                 <div class="half-width">
                     <label for="userPassword">Password</label>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" name="password" required="required">
                 </div>
 
                 <div class="half-width">
                     <label for="userPasswordRepeat">Repeat Password</label>
-                    <input type="password" id="confirm_password" name="confirm_password">
+                    <input type="password" id="confirm_password" name="confirm_password" required="required">
                 </div>
             </fieldset>
 
