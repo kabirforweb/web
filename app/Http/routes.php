@@ -32,5 +32,9 @@ Route::group(['middleware'=>['guest']],function(){
 
 Route::group(['middleware' => ['auth']],function(){
     Route::get('index',['as'=>'dashboard','uses'=>'HomeController@index']);
+    Route::get('layout-2',['as'=>'dashboard','uses'=>'HomeController@layout2']);
+    Route::get('layout-3',['as'=>'dashboard','uses'=>'HomeController@layout3']);
+    Route::get('layout-4',['as'=>'dashboard','uses'=>'HomeController@layout4']);
+
     Route::get('logout',['as'=>'logout','uses'=>'HomeController@logout']);
 });

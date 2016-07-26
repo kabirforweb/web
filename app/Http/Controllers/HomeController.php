@@ -211,4 +211,19 @@ class HomeController extends LineupBeastController
         return view('test.dashboard')->with(compact('user'));
     }
 
+    public function layout2(){
+        $user   =   Session::get('user')->firstname;
+        return view('test.layout2')->with(compact('user'));
+    }
+
+    public function layout3(){
+        $user   =   Session::get('user')->firstname;
+        return view('test.layout3')->with(compact('user'));
+    }
+
+    public function layout4(){
+        $user   =   Session::get('user')->firstname;
+        return view('test.layout4')->with(compact('user'));
+    }
+
 }
