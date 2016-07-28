@@ -24,8 +24,12 @@
 <script src="{{asset('js/nw.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
 <script>
-
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="tooltip"]').tooltip();
+        $(document).on('click','.accordion-toggle',function(){
+            var me = $(this);
+            $('.accordion-toggle').not(me).addClass('collapsed');
+            $('.accordian-body').not(me.next('tr').find('.accordian-body')).removeClass('in');
+        });
     })
 </script>

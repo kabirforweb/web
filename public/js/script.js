@@ -42,14 +42,14 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+/*btn.onclick = function() {
     modal.style.display = "block";
-}
+}*/
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+/*span.onclick = function() {
     modal.style.display = "none";
-}
+}*/
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -69,14 +69,14 @@ var btn = document.getElementById("myBtn2");
 var span = document.getElementsByClassName("close")[1];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+/*btn.onclick = function() {
     modal.style.display = "block";
-}
+}*/
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+/*span.onclick = function() {
     modal.style.display = "none";
-}
+}*/
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -97,14 +97,14 @@ var btn = document.getElementById("myBtn3");
 var span = document.getElementsByClassName("close")[3];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+/*btn.onclick = function() {
     modal.style.display = "block";
-}
+}*/
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+/*span.onclick = function() {
     modal.style.display = "none";
-}
+}*/
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -125,14 +125,14 @@ var btn = document.getElementById("myBtn4");
 var span = document.getElementsByClassName("close")[4];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+/*btn.onclick = function() {
     modal.style.display = "block";
-}
+}*/
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+/*span.onclick = function() {
     modal.style.display = "none";
-}
+}*/
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -153,14 +153,14 @@ var btn = document.getElementById("myBtn5");
 var span = document.getElementsByClassName("close")[5];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+/*btn.onclick = function() {
     modal.style.display = "block";
-}
+}*/
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+/*span.onclick = function() {
     modal.style.display = "none";
-}
+}*/
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

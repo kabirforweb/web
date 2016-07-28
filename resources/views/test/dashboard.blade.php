@@ -106,7 +106,7 @@
 </nav>
 
 <!-- About Section -->
-
+<?php //echo '<pre>'; print_r($upcomingMatches); die;?>
 <section class="sub-content">
 <div class="topslider">
     <div class="container">
@@ -114,21 +114,27 @@
             <div class="topsliderleft"><a href="#">ALL MATCHUPS</a> </div>
             <div class="topsliderright">
                 <div id="owl-demo" class="owl-carousel" >
-                    <div class="item">
-                        <div class="item-wrap"> <span class="date">Apr. 10 @ 6:00PM ET</span>
+                    @foreach($upcomingMatches as $match)
+                    <?php
+                    $c =  \Carbon\Carbon::parse($match->DateTime);
+
+                    ?>
+                        <div class="item">
+
+                            <div class="item-wrap"> <span class="date">{{$c->formatLocalized('%B')}} {{$c->day}} @ {{$c->hour}}:{{$c->minute}} ET</span>
                             <div class="team-info">
                                 <dl class="dl-horizontal">
                                     <dt>
                                     <div class="radio radio-cstm">
                                         <input type="radio" id="iba" name="team">
-                                        <label for="iba">IBA</label>
+                                        <label for="iba">{{$match->HomeTeam}}</label>
                                     </div>
                                     </dt>
                                     <dd>o205</dd>
                                     <dt>
                                     <div class="radio radio-cstm">
                                         <input type="radio" id="ina" name="team">
-                                        <label for="ina">INA</label>
+                                        <label for="ina">{{$match->AwayTeam}}</label>
                                     </div>
                                     </dt>
                                     <dd>-5.50 tFAV</dd>
@@ -136,122 +142,8 @@
                             </div>
                             <div class="weather-info"><img src="img/weather-icon.png" alt=""><span>62%</span> Rain </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-wrap"> <span class="date">Apr. 10 @ 6:00PM ET</span>
-                            <div class="team-info">
-                                <dl class="dl-horizontal">
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="iba" name="team">
-                                        <label for="iba">IBA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>o205</dd>
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="ina" name="team">
-                                        <label for="ina">INA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>-5.50 tFAV</dd>
-                                </dl>
-                            </div>
-                            <div class="weather-info"><img src="img/weather-icon.png" alt=""><span>62%</span> Rain </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-wrap"> <span class="date">Apr. 10 @ 6:00PM ET</span>
-                            <div class="team-info">
-                                <dl class="dl-horizontal">
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="iba" name="team">
-                                        <label for="iba">IBA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>o205</dd>
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="ina" name="team">
-                                        <label for="ina">INA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>-5.50 tFAV</dd>
-                                </dl>
-                            </div>
-                            <div class="weather-info"><img src="img/weather-icon.png" alt=""><span>62%</span> Rain </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-wrap"> <span class="date">Apr. 10 @ 6:00PM ET</span>
-                            <div class="team-info">
-                                <dl class="dl-horizontal">
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="iba" name="team">
-                                        <label for="iba">IBA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>o205</dd>
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="ina" name="team">
-                                        <label for="ina">INA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>-5.50 tFAV</dd>
-                                </dl>
-                            </div>
-                            <div class="weather-info"><img src="img/weather-icon.png" alt=""><span>62%</span> Rain </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-wrap"> <span class="date">Apr. 10 @ 6:00PM ET</span>
-                            <div class="team-info">
-                                <dl class="dl-horizontal">
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="iba" name="team">
-                                        <label for="iba">IBA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>o205</dd>
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="ina" name="team">
-                                        <label for="ina">INA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>-5.50 tFAV</dd>
-                                </dl>
-                            </div>
-                            <div class="weather-info"><img src="img/weather-icon.png" alt=""><span>62%</span> Rain </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-wrap"> <span class="date">Apr. 10 @ 6:00PM ET</span>
-                            <div class="team-info">
-                                <dl class="dl-horizontal">
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="iba" name="team">
-                                        <label for="iba">IBA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>o205</dd>
-                                    <dt>
-                                    <div class="radio radio-cstm">
-                                        <input type="radio" id="ina" name="team">
-                                        <label for="ina">INA</label>
-                                    </div>
-                                    </dt>
-                                    <dd>-5.50 tFAV</dd>
-                                </dl>
-                            </div>
-                            <div class="weather-info"><img src="img/weather-icon.png" alt=""><span>62%</span> Rain </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -367,7 +259,7 @@
 <div class="tab-content">
 <div role="tabpanel" class="tab-pane active" id="show">
 <div class="player-table table-color table-responsive">
-<table class="table table-bordered table-condensed" style="border-collapse:collapse;">
+<table class="panel-group table table-bordered table-condensed" style="border-collapse:collapse;">
 <thead>
 <tr>
     <th> <div class="select-search-wrap clearfix">
@@ -402,7 +294,8 @@
 </tr>
 </thead>
 <tbody>
-<tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle collapsed odd">
+
+    <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle collapsed odd">
     <td><div class="select-search-wrap clearfix">
             <div class="player-checkbox">
                 <div class="checkbox checkbox-cstm">

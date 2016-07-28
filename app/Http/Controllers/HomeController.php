@@ -208,7 +208,18 @@ class HomeController extends LineupBeastController
     public function index(){
 
         $user   =   Session::get('user')->firstname;
-        return view('test.dashboard')->with(compact('user'));
+
+        try {
+            $response           =   $this->client->request( 'GET', $this->api_server_url.'latestMatches');
+
+            $upcomingMatches    =   json_decode($response->getBody());
+        } catch (\Exception $e) {
+            if($e instanceof ServerException || $e instanceof ClientException){
+                Log::error('Failed to fetch match schedules');
+            }
+        }
+
+        return view('test.dashboard')->with(compact('user','upcomingMatches'));
     }
 
     public function layout2(){
